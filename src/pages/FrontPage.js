@@ -5,6 +5,8 @@ import ChooseBranch from '../components/Frontpage/ChooseBranch'
 
 const FrontPage = () => {
 
+    const SHEILA_USERNAME = process.env.REACT_APP_SHEILA_USERNAME;
+    const SHEILA_PASSWORD = process.env.REACT_APP_SHEILA_PASSWORD;
 
     const baseurl = "https://ms-proxy-api.deranged.dk/login";
 
@@ -17,8 +19,8 @@ const FrontPage = () => {
         method: "POST",
         headers: headers,
         body: JSON.stringify({
-            "email": "",
-            "password": ""
+            "email": `${SHEILA_USERNAME}`,
+            "password": `${SHEILA_PASSWORD}`
         })
     }).then(response => {
         console.log(response);
